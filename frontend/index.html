@@ -376,8 +376,33 @@
     </footer>
 
 
-    <script src="js/app.js"></script>
+```html
+<script>
+    console.log("CyberGuard: index.html loaded.");
+
+    window.addEventListener("load", function () {
+
+        console.log("CyberGuard: Page fully loaded.");
+
+        const script = document.createElement("script");
+
+        script.src = "./js/app.js";
+
+        script.onload = function () {
+            console.log("CyberGuard: app.js loaded successfully.");
+        };
+
+        script.onerror = function () {
+            alert("ERROR: CyberGuard app.js could not be loaded.");
+            console.error("CyberGuard: Failed to load ./js/app.js");
+        };
+
+        document.body.appendChild(script);
+
+    });
+</script>
 
 </body>
 </html>
 ```
+
