@@ -1,14 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CyberGuard | Security Dashboard</title>
+    <title>CyberGuard | Cybersecurity Dashboard</title>
 
     <meta
         name="description"
-        content="CyberGuard - Cybersecurity Threat Detection & Monitoring Platform"
+        content="CyberGuard - AI-powered cybersecurity monitoring and threat analysis platform."
     >
 
     <link rel="stylesheet" href="css/style.css">
@@ -16,293 +17,283 @@
 
 <body>
 
-    <!-- Background -->
-    <div class="background-grid"></div>
-
     <!-- Navigation -->
     <header class="navbar">
-        <div class="logo">
-            <span class="logo-icon">🛡️</span>
-            <span>CyberGuard</span>
-        </div>
+        <div class="container nav-container">
 
-        <div class="nav-status">
-            <span class="status-dot"></span>
-            Security Engine Online
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span>CyberGuard</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#security">Security</a>
+                <a href="#threats">Threats</a>
+                <a href="#about">About</a>
+            </nav>
+
         </div>
     </header>
 
 
-    <!-- Main -->
-    <main class="container">
+    <!-- Hero Section -->
+    <main>
 
-        <!-- Hero -->
-        <section class="hero">
+        <section class="hero" id="dashboard">
+            <div class="container hero-content">
 
-            <div class="hero-content">
+                <div class="hero-text">
 
-                <div class="badge">
-                    CYBERGUARD v1.0
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        SYSTEM ONLINE
+                    </div>
+
+                    <h1>
+                        Intelligent
+                        <span>Cybersecurity</span>
+                        Protection
+                    </h1>
+
+                    <p>
+                        CyberGuard is a modern cybersecurity platform designed
+                        to monitor systems, analyze security threats and provide
+                        intelligent protection insights.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button id="healthBtn" class="btn btn-primary">
+                            Check System
+                        </button>
+
+                        <a href="#security" class="btn btn-secondary">
+                            Explore Security
+                        </a>
+                    </div>
+
+                    <div id="healthResult" class="health-result">
+                        System status has not been checked yet.
+                    </div>
+
                 </div>
 
-                <h1>
-                    Cybersecurity
-                    <span>Threat Detection</span>
-                </h1>
+
+                <!-- Security Panel -->
+                <div class="security-card">
+
+                    <div class="card-header">
+                        <div>
+                            <span class="card-label">SECURITY CENTER</span>
+                            <h2>CyberGuard Monitor</h2>
+                        </div>
+
+                        <span class="live-indicator">
+                            ● LIVE
+                        </span>
+                    </div>
+
+                    <div class="security-score">
+                        <div class="score-circle">
+                            <span>98</span>
+                            <small>%</small>
+                        </div>
+
+                        <div>
+                            <h3>Security Score</h3>
+                            <p>System protection is active</p>
+                        </div>
+                    </div>
+
+                    <div class="security-stats">
+
+                        <div class="stat">
+                            <span class="stat-icon">🔒</span>
+                            <div>
+                                <strong>Protected</strong>
+                                <small>System status</small>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-icon">⚡</span>
+                            <div>
+                                <strong>Active</strong>
+                                <small>Threat monitoring</small>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-icon">🤖</span>
+                            <div>
+                                <strong>AI Ready</strong>
+                                <small>Threat analysis</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Security Features -->
+        <section class="features" id="security">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span>CYBERSECURITY PLATFORM</span>
+                    <h2>Advanced Security Tools</h2>
+                    <p>
+                        Monitor, analyze and respond to cybersecurity threats
+                        through one centralized platform.
+                    </p>
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Threat Detection</h3>
+                        <p>
+                            Detect suspicious activities and identify potential
+                            security threats in real time.
+                        </p>
+                    </article>
+
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>AI Analysis</h3>
+                        <p>
+                            Use intelligent analysis to evaluate security events
+                            and identify unusual behavior.
+                        </p>
+                    </article>
+
+
+                    <article class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Security Monitoring</h3>
+                        <p>
+                            Monitor security status and view important
+                            cybersecurity indicators from one dashboard.
+                        </p>
+                    </article>
+
+
+                    <article class="feature-card">
+                        <div class="feature-icon">🚨</div>
+                        <h3>Incident Alerts</h3>
+                        <p>
+                            Receive clear alerts when potentially dangerous
+                            activity is detected.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Threat Monitoring -->
+        <section class="threat-section" id="threats">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span>THREAT INTELLIGENCE</span>
+                    <h2>Security Overview</h2>
+                </div>
+
+
+                <div class="threat-grid">
+
+                    <div class="threat-card">
+                        <span class="threat-number">24/7</span>
+                        <span class="threat-label">Monitoring</span>
+                    </div>
+
+                    <div class="threat-card">
+                        <span class="threat-number">98%</span>
+                        <span class="threat-label">Security Score</span>
+                    </div>
+
+                    <div class="threat-card">
+                        <span class="threat-number">0</span>
+                        <span class="threat-label">Active Threats</span>
+                    </div>
+
+                    <div class="threat-card">
+                        <span class="threat-number">AI</span>
+                        <span class="threat-label">Analysis Engine</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about" id="about">
+
+            <div class="container about-content">
+
+                <div>
+                    <span class="section-label">ABOUT CYBERGUARD</span>
+
+                    <h2>
+                        Security built for
+                        <span>modern systems.</span>
+                    </h2>
+                </div>
 
                 <p>
-                    Monitor security events, detect suspicious activity,
-                    analyze threats and protect your digital environment
-                    from a single intelligent dashboard.
+                    CyberGuard combines cybersecurity monitoring, threat
+                    detection and intelligent analysis into a simple,
+                    professional security dashboard.
                 </p>
 
-                <div class="hero-buttons">
-
-                    <button id="healthBtn" class="primary-btn">
-                        Check Security Engine
-                    </button>
-
-                    <button id="dashboardBtn" class="secondary-btn">
-                        Load Dashboard
-                    </button>
-
-                </div>
-
-                <div id="statusMessage" class="status-message">
-                    System ready.
-                </div>
-
             </div>
 
         </section>
-
-
-        <!-- Security Overview -->
-        <section class="section">
-
-            <div class="section-header">
-                <div>
-                    <div class="section-label">
-                        SECURITY OVERVIEW
-                    </div>
-
-                    <h2>
-                        Security Dashboard
-                    </h2>
-                </div>
-
-                <div class="live-indicator">
-                    <span></span>
-                    LIVE
-                </div>
-            </div>
-
-
-            <div class="stats-grid">
-
-                <div class="stat-card">
-                    <div class="stat-icon">⚠️</div>
-
-                    <div class="stat-info">
-                        <span>Total Threats</span>
-                        <strong id="threats">--</strong>
-                    </div>
-                </div>
-
-
-                <div class="stat-card critical">
-                    <div class="stat-icon">🔴</div>
-
-                    <div class="stat-info">
-                        <span>Critical</span>
-                        <strong id="critical">--</strong>
-                    </div>
-                </div>
-
-
-                <div class="stat-card high">
-                    <div class="stat-icon">🟠</div>
-
-                    <div class="stat-info">
-                        <span>High Risk</span>
-                        <strong id="high">--</strong>
-                    </div>
-                </div>
-
-
-                <div class="stat-card medium">
-                    <div class="stat-icon">🟡</div>
-
-                    <div class="stat-info">
-                        <span>Medium Risk</span>
-                        <strong id="medium">--</strong>
-                    </div>
-                </div>
-
-
-                <div class="stat-card safe">
-                    <div class="stat-icon">🟢</div>
-
-                    <div class="stat-info">
-                        <span>Safe Events</span>
-                        <strong id="safeEvents">--</strong>
-                    </div>
-                </div>
-
-
-                <div class="stat-card score">
-                    <div class="stat-icon">🛡️</div>
-
-                    <div class="stat-info">
-                        <span>Security Score</span>
-                        <strong id="securityScore">--</strong>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Security Modules -->
-        <section class="section">
-
-            <div class="section-header">
-
-                <div>
-                    <div class="section-label">
-                        SECURITY MODULES
-                    </div>
-
-                    <h2>
-                        Protection Center
-                    </h2>
-                </div>
-
-            </div>
-
-
-            <div class="modules-grid">
-
-                <div class="module-card">
-                    <div class="module-icon">🔍</div>
-
-                    <h3>Threat Scanner</h3>
-
-                    <p>
-                        Analyze suspicious activity and identify
-                        potential security threats.
-                    </p>
-
-                    <span class="module-status">
-                        Ready
-                    </span>
-                </div>
-
-
-                <div class="module-card">
-                    <div class="module-icon">🌐</div>
-
-                    <h3>URL Scanner</h3>
-
-                    <p>
-                        Inspect suspicious URLs and detect potentially
-                        dangerous destinations.
-                    </p>
-
-                    <span class="module-status">
-                        Ready
-                    </span>
-                </div>
-
-
-                <div class="module-card">
-                    <div class="module-icon">📁</div>
-
-                    <h3>File Analyzer</h3>
-
-                    <p>
-                        Analyze uploaded files and identify suspicious
-                        characteristics.
-                    </p>
-
-                    <span class="module-status">
-                        Ready
-                    </span>
-                </div>
-
-
-                <div class="module-card">
-                    <div class="module-icon">📊</div>
-
-                    <h3>Log Analyzer</h3>
-
-                    <p>
-                        Monitor system logs and detect unusual
-                        security events.
-                    </p>
-
-                    <span class="module-status">
-                        Ready
-                    </span>
-                </div>
-
-
-                <div class="module-card">
-                    <div class="module-icon">🔐</div>
-
-                    <h3>Password Security</h3>
-
-                    <p>
-                        Evaluate password strength and improve
-                        account security.
-                    </p>
-
-                    <span class="module-status">
-                        Ready
-                    </span>
-                </div>
-
-
-                <div class="module-card">
-                    <div class="module-icon">🤖</div>
-
-                    <h3>AI Security Analysis</h3>
-
-                    <p>
-                        Use intelligent analysis to assist with
-                        cybersecurity investigations.
-                    </p>
-
-                    <span class="module-status">
-                        Ready
-                    </span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Footer -->
-        <footer>
-
-            <div>
-                <strong>CyberGuard</strong>
-                <span>Cybersecurity Threat Detection Platform</span>
-            </div>
-
-            <div>
-                Authorized Security Monitoring
-            </div>
-
-        </footer>
 
     </main>
 
 
-    <!-- JavaScript -->
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <strong>🛡️ CyberGuard</strong>
+                <p>Smart cybersecurity monitoring platform.</p>
+            </div>
+
+            <div>
+                <span>Cybersecurity • AI • Digital Protection</span>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 CyberGuard. All rights reserved.
+        </div>
+
+    </footer>
+
+
     <script src="js/app.js"></script>
 
 </body>
 </html>
+```
