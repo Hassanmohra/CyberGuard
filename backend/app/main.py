@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 
+from app.api.threats import router as threats_router
 
 app = FastAPI(
     title="CyberGuard",
@@ -9,8 +10,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-
-# Allow frontend connections
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -18,6 +17,22 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(threats_router)
+
+
+# =========================
+# CyberGuard Dashboard Data
+# =========================
+
+dashboard_data = {
+    "threats": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "safe_events": 0,
+    "security_score": 100
+}
 
 
 @app.get("/")
@@ -43,10 +58,6 @@ def health():
 @app.get("/api/dashboard")
 def dashboard():
     return {
-        "threats": 12,
-        "critical": 2,
-        "high": 4,
-        "medium": 6,
-        "safe_events": 105,
-        "security_score": 87
+        **dashboard_data,
+        "timestamp": datetime.utcnow().isoformat()
     }
