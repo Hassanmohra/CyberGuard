@@ -202,6 +202,90 @@
         </section>
 
 
+        <!-- Threat Detection -->
+        <section class="threat-detection">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span>THREAT DETECTION ENGINE</span>
+                    <h2>Analyze Security Events</h2>
+                    <p>
+                        Test suspicious events and let CyberGuard analyze
+                        their potential security impact.
+                    </p>
+                </div>
+
+
+                <div class="threat-analyzer">
+
+                    <div class="analyzer-form">
+
+                        <label for="threatType">
+                            Security Event
+                        </label>
+
+                        <select id="threatType">
+
+                            <option value="failed_login">
+                                Failed Login Attempts
+                            </option>
+
+                            <option value="brute_force">
+                                Brute Force Attack
+                            </option>
+
+                            <option value="port_scan">
+                                Port Scanning
+                            </option>
+
+                            <option value="malware">
+                                Malware Activity
+                            </option>
+
+                            <option value="suspicious_request">
+                                Suspicious Network Request
+                            </option>
+
+                            <option value="unknown">
+                                Normal / Unknown Event
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            id="analyzeThreatBtn"
+                            class="btn btn-primary"
+                        >
+                            Analyze Threat
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="threatResult"
+                        class="threat-result"
+                    >
+                        <div class="result-icon">🛡️</div>
+
+                        <div>
+                            <strong>Ready for analysis</strong>
+
+                            <p>
+                                Select a security event and start the analysis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
         <!-- Threat Monitoring -->
         <section class="threat-section" id="threats">
 
