@@ -1,35 +1,8 @@
 ```javascript
-/* =========================================
-   CyberGuard - Frontend Application
-   ========================================= */
-
-const API_BASE_URL =
-    window.location.hostname.includes("-3001.")
-        ? `${window.location.protocol}//${window.location.hostname.replace(
-              "-3001.",
-              "-8000."
-          )}`
-        : "http://127.0.0.1:8000";
-
-
-/* =========================================
-   DOM Elements
-   ========================================= */
-
 const healthBtn = document.getElementById("healthBtn");
 const healthResult = document.getElementById("healthResult");
 
-
-/* =========================================
-   Health Check
-   ========================================= */
-
 async function checkBackendHealth() {
-
-    if (!healthBtn || !healthResult) {
-        return;
-    }
-
     healthBtn.disabled = true;
     healthBtn.textContent = "Checking...";
 
@@ -37,9 +10,8 @@ async function checkBackendHealth() {
     healthResult.textContent = "Connecting to CyberGuard backend...";
 
     try {
-
         const response = await fetch(
-            `${API_BASE_URL}/api/health`,
+            "https://shiny-space-disco-wr7xq9q9vq9q274w-8000.app.github.dev/api/health",
             {
                 method: "GET",
                 headers: {
@@ -49,73 +21,28 @@ async function checkBackendHealth() {
         );
 
         if (!response.ok) {
-            throw new Error(
-                `Backend returned HTTP ${response.status}`
-            );
+            throw new Error(`HTTP ${response.status}`);
         }
 
         const data = await response.json();
 
-        healthResult.className =
-            "health-result success";
+        healthResult.className = "health-result success";
 
         healthResult.textContent =
-            `${data.service || "CyberGuard"} backend: ${
-                data.status || "online"
-            }`;
+            `${data.service} backend: ${data.status}`;
 
     } catch (error) {
+        console.error("CyberGuard error:", error);
 
-        console.error(
-            "CyberGuard backend error:",
-            error
-        );
-
-        healthResult.className =
-            "health-result error";
+        healthResult.className = "health-result error";
 
         healthResult.textContent =
-            "Backend is not reachable yet.";
-
-    } finally {
-
-        healthBtn.disabled = false;
-        healthBtn.textContent = "Check System";
+            "Backend connection failed.";
     }
+
+    healthBtn.disabled = false;
+    healthBtn.textContent = "Check System";
 }
 
-
-/* =========================================
-   Button Event
-   ========================================= */
-
-if (healthBtn) {
-
-    healthBtn.addEventListener(
-        "click",
-        checkBackendHealth
-    );
-
-}
-
-
-/* =========================================
-   Initial Application State
-   ========================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        console.log(
-            "CyberGuard frontend initialized."
-        );
-
-        console.log(
-            "Backend API:",
-            API_BASE_URL
-        );
-
-    }
-);
+healthBtn.addEventListener("click", checkBackendHealth);
 ```
